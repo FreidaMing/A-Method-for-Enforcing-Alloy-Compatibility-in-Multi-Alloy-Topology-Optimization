@@ -115,8 +115,8 @@ Optimized topology and alloy distribution
 1. Clone the repository:
 
 ```bash
-git clone <repository-url>
-cd <repository-name>
+git clone https://github.com/FreidaMing/A-Method-for-Enforcing-Alloy-Compatibility-in-Multi-Alloy-Topology-Optimization.git
+cd A-Method-for-Enforcing-Alloy-Compatibility-in-Multi-Alloy-Topology-Optimization
 ```
 
 2. Open the project in MATLAB.
@@ -157,9 +157,9 @@ The framework can generate:
 - stress distributions; and
 - intermediate optimization results.
 
-To display a result figure in this README:
+## Results
 
-<img width="1203" height="507" alt="31" src="https://github.com/user-attachments/assets/d1f56335-c4fb-426a-9b55-9d01cfbe943f" />
+<img width="1203" alt="Optimized multi-alloy topology" src="https://github.com/user-attachments/assets/d1f56335-c4fb-426a-9b55-9d01cfbe943f">
 
 
 ## Applications
