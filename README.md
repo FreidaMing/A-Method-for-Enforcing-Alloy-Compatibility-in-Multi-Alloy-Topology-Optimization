@@ -61,44 +61,16 @@ Only neighboring alloys in this sequence are allowed to form direct interfaces.
 
 The structural design is represented using multiple level-set fields. The optimization minimizes a structural objective, such as compliance, while satisfying material-volume, ordering, and manufacturability constraints.
 
-\[
-\min_{\boldsymbol{\phi}} J(\boldsymbol{\phi})
-\]
-
-subject to
-
-\[
-V_i \leq V_{i,\max}.
-\]
 
 ### 3. Alloy-Ordering Constraint
 
-The material hierarchy is enforced so that higher-order alloys can only exist inside regions already occupied by the preceding alloy phase:
-
-\[
-\Omega_M \subseteq \Omega_{M-1} \subseteq \cdots \subseteq \Omega_2 \subseteq \Omega_1.
-\]
+The material hierarchy is enforced so that higher-order alloys can only exist inside regions already occupied by the preceding alloy phase.
 
 This nested representation prevents incompatible alloys from becoming direct neighbors and promotes gradual alloy transitions.
 
 ### 4. Reaction-Diffusion Level-Set Evolution
 
-The level-set fields are updated using a reaction-diffusion equation:
-
-\[
-\frac{\partial \phi_i}{\partial t}
-=
-F_i d_{\phi}\mathcal{L}
-+
-\tau \nabla^2 \phi_i,
-\]
-
-where:
-
-- \(\phi_i\) is the level-set field for alloy phase \(i\);
-- \(d_{\phi}\mathcal{L}\) is the design sensitivity;
-- \(F_i\) controls the update direction and magnitude; and
-- \(\tau \nabla^2 \phi_i\) regularizes interface evolution.
+The level-set fields are updated using a reaction-diffusion equation.
 
 ## Computational Workflow
 
@@ -136,20 +108,7 @@ Convergence check
 Optimized topology and alloy distribution
 ```
 
-## Repository Structure
 
-```text
-.
-├── README.md
-├── src/                  # Optimization and finite-element routines
-├── examples/             # Example design problems
-├── material_data/        # Alloy properties and compatibility information
-├── results/              # Generated figures and optimization outputs
-├── docs/                 # Method descriptions and supplementary notes
-└── LICENSE
-```
-
-Adjust the directory names to match the actual repository.
 
 ## Running the Code
 
@@ -200,9 +159,8 @@ The framework can generate:
 
 To display a result figure in this README:
 
-```markdown
-![Optimized multi-alloy topology](results/optimized_topology.png)
-```
+<img width="1203" height="507" alt="31" src="https://github.com/user-attachments/assets/d1f56335-c4fb-426a-9b55-9d01cfbe943f" />
+
 
 ## Applications
 
@@ -239,12 +197,14 @@ The study was developed for the ASME International Design Engineering Technical 
 Replace the placeholders below with the final publication information:
 
 ```bibtex
-@inproceedings{shu_alloy_compatibility_mato,
-  title     = {A Method for Enforcing Alloy Compatibility in Multi-Alloy Topology Optimization},
-  author    = {Shu, Yalan and others},
-  booktitle = {Proceedings of the ASME International Design Engineering Technical Conferences and Computers and Information in Engineering Conference},
-  year      = {2025},
-  doi       = {TO_BE_ADDED}
+@inproceedings{shu2025method,
+  title={A Method for Enforcing Alloy Compatibility in Multi-Alloy Topology Optimization},
+  author={Shu, Yalan and Allen, Marshall D and Vela, Brent and Malak, Richard},
+  booktitle={International Design Engineering Technical Conferences and Computers and Information in Engineering Conference},
+  volume={89237},
+  pages={V03BT03A007},
+  year={2025},
+  organization={American Society of Mechanical Engineers}
 }
 ```
 
@@ -254,10 +214,3 @@ Replace the placeholders below with the final publication information:
 Texas A&M University  
 Email: `shuyl@tamu.edu`
 
-## License
-
-Add the license selected for this repository, such as the MIT License or BSD 3-Clause License.
-
-## Disclaimer
-
-This repository contains research code developed for academic use. Results may depend on mesh resolution, numerical parameters, material data, and compatibility assumptions. Users should independently verify results before applying the method to engineering design or manufacturing.
